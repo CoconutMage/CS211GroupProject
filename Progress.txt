@@ -1,0 +1,38 @@
+Midpoint Project Progress Report
+
+Objective: Design a program that takes the input of two addresses and returns
+a list of possible places to meet in the middle.
+
+Group Member Responsibilities:
+Willie - User Interface
+Catie - Data Classes
+Adam - URL Requests to Google Maps APIs and Parsing
+Zain - Calculating midpoint and meeting places
+
+Methodology:
+The User Interface will accept and validate two addresses. The UI will then
+create a controller class and call the run() method which will call a series
+of methods within the controller. The first method will make a URL request to
+Google Maps APIs for the navigation instructions between these two addresses.
+The controller will store this information into an array of Step objects. The
+controller's findMidpoint() method will use this array to walk through the
+navigation to calculate the midpoint and store it as a Location object. The
+controller's findMeetingPlaces() method will then make another URL request
+using the midpoint and parse the results to return a list of locations in the
+area. The controller will create MeetingPlace objects and store them into a
+MeetingPlaceArrayList object. Finally, the run() method will call displayDetails
+and return a string with possible meeting places in the area and their relevant
+information.
+
+Progress & Next Steps:
+At this point, we have a basic UI along with the data classes and controller
+methods required to successfully parse, calculate, and return a list of possible
+meeting places. Moving forward, we will test and debug individual components to
+create a cohesive project. If we are successful up to that point, we intend to
+provide the option to calculate the midpoint calculation based on time as well
+as distance and also to select the radius at which meeting places around the
+midpoint are identified.
+
+
+
+
