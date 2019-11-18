@@ -1,2 +1,2 @@
 # CS211GroupProjct
-Group Project with Catie, Zane, Adam, Willie
+Group Project with Catie, Zain, Adam, Willie
