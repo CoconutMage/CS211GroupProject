@@ -83,13 +83,8 @@ public class MeetingPlace extends Location {
 	// Similar to toString(). Lists all attributes on a new line.
 	public String displayDetails() {
 		String details = "";
-		details += name + "/";
-		details += address + "/";
-		if (placeType != "") {
-			details += placeType + "/";
-		}
 		if (starRating != "") {
-			details += "Rated " + starRating + " out of 5" + "/";
+			details += "Rated: " + starRating + " out of 5" + "/";
 		}
 		return details;
 	}

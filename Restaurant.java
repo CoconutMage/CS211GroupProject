@@ -26,11 +26,6 @@ public class Restaurant extends MeetingPlace {
 	@Override
 	public String displayDetails() {
 		String details = "";
-		details += this.getName() + "/";
-		details += this.getAddress() + "/";
-		if (this.getPlaceType() != "") {
-			details += this.getPlaceType() + "/";
-		}
 		if (this.getStarRating() != "") {
 			details += "Rated " + this.getStarRating() + " out of 5" + "/";
 		}
