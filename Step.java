@@ -6,7 +6,7 @@
 public class Step {
 	// Declare attributes.
 	private Location startLoc;
-	private int distance;
+	private float distance;
 	private int duration;
 	private Location endLoc;
 	
@@ -19,14 +19,29 @@ public class Step {
 	}
 	
 	// Declares getters only. Step information should not be edited after being constructed.
+	public void setStartLoc(Location startLoc) {
+		this.startLoc = startLoc;
+	}
 	public Location getStartLoc() {
 		return startLoc;
 	}
-	public int getDistance() {
+	
+	public void setDistance(float distance) {
+		this.distance = distance;
+	}
+	public float getDistance() {
 		return distance;
+	}
+	
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 	public int getDuration() {
 		return duration;
+	}
+	
+	public void setEndLoc(Location endLoc) {
+		this.endLoc = endLoc;
 	}
 	public Location getEndLoc() {
 		return endLoc;
