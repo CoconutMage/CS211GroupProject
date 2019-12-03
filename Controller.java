@@ -218,8 +218,6 @@ public class Controller
 				rating = parsedData[13];
 				rating = rating.substring(3);
 				rating = (rating.split(","))[0];
-				if (name.contains("AT&T")) type = parsedData[26];
-				else type = parsedData[24];
 				for (int k = 0; k < parsedData.length; k++)
 				{
 					if(parsedData[k].contains("vicinity"))
@@ -229,6 +227,23 @@ public class Controller
 					}
 				}
 				address = parsedData[j];
+				if (name.contains("AT&T")) type = parsedData[26];
+				else
+				{
+					for (int k = 0; k < parsedData.length; k++)
+					{
+						if(parsedData[k].contains("type"))
+						{
+							j = k + 2;
+							break;
+						}
+					}
+					type = parsedData[j];
+				}
+				if (type == "point_of_interest")
+				{
+					type = "";
+				}
 				//Creates string to be displayed later to ensure data is correct and formatted properly
 				splitData[i] = "Name: " + name + "\nPrice Level: " + price + "\nRating: " + rating + "\nTypes: " + type + "\nAddress: " + address + "\n";
 				//Creates meeting place object and adds it to the array list
@@ -251,6 +266,15 @@ public class Controller
 					}
 				}
 				address = parsedData[j];
+				for (int k = 0; k < parsedData.length; k++)
+				{
+					if(parsedData[k].contains("type"))
+					{
+						j = k + 2;
+						break;
+					}
+				}
+				type = parsedData[j];
 				splitData[i] = "Name: " + name + "\nRating: " + rating + "\nTypes: " + type + "\nAddress: " + address + "\n";
 				MeetingPlace meet = new MeetingPlace(name, address, type, rating);
 				meetingPlaces.add(meet);
